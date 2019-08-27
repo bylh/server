@@ -13,5 +13,12 @@ let intersectionSet = new Set([...a].filter(x => b.has(x)));
 
 // ab差集
 let differenceABSet = new Set([...a].filter(x => !b.has(x)));
+let differenceBASet = new Set([...b].filter(x => !a.has(x)));
+console.log(Array.from(differenceABSet), Array.from(differenceBASet));
 
-console.log(Array.from(differenceABSet));
+// let a1 = ['A', 'B', 'C'];
+// let a2 = ['D', 'E', 'C', 'A'];
+
+// let result = Array.from(new Set([...a1.filter(x => a2.includes(x)), ...a2]));
+
+// console.log(result);
