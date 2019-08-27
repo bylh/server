@@ -35,7 +35,7 @@ let knows = [
     id: '3',
     name: '333'
   }],
-]
+];
 // 找到删除的即input中存在，而output中不存在
 let deleteArr = input.filter(inputItem =>
    output.findIndex(outputItem => outputItem.id === inputItem.id) === -1);
@@ -47,6 +47,12 @@ let addArr = output.filter(outputItem =>
 console.log(addArr);
 
 knows.forEach(arr => {
-  // arr.splice()
+  deleteArr.forEach(dItem => {
+    let index = arr.findIndex(item => item.id === dItem.id);
+    if (index !== -1) {
+      arr.splice(index, 1);
+    }
+  });
   arr.push(...addArr);
-})
+});
+console.log(knows);
