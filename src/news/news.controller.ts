@@ -8,8 +8,8 @@ export class NewsController {
     this.newsServ = newsServ;
   }
   // daily/:id
-  @Get(':id')
-  findAll(@Query() query: string, @Param() params): string[] {
+  @Get()
+  findAll(@Query() query, @Param() params): Object[] {
     console.log(query, params);
     return this.newsServ.findAll();
   }

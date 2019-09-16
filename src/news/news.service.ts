@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class NewsService {
-  private readonly newsArr: string[] = [];
-  create(news: string) {
+  private readonly newsArr: Object[] = [{title: '知乎', url: 'https://www.zhihu.com/'}];
+  create(news: Object) {
     this.newsArr.push(news);
   }
-  findAll(): string[] {
+  findAll(): Object[] {
     return this.newsArr;
   }
 }
