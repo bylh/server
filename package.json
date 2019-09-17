@@ -11,6 +11,7 @@
     "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
     "start:prod": "node dist/main.js",
+    "pm2-start": "pm2 start ecosystem.config.js --env production --watch",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -24,6 +25,7 @@
     "@nestjs/platform-express": "^6.0.0",
     "@types/cors": "^2.8.6",
     "cors": "^2.8.5",
+    "pm2": "^3.5.1",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3"
