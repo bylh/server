@@ -7,17 +7,27 @@ export class NewsController {
   constructor(newsServ: NewsService) {
     this.newsServ = newsServ;
   }
-  // daily/:id
   @Get()
-  findAll(@Query() query, @Param() params): Object[] {
+  async getNews(@Query() query, @Param() params) {
     console.log(query, params);
-    return this.newsServ.findAll();
+    return this.newsServ.getNews(query.id);
+  }
+  @Get('types')
+  async getNewsTypes() {
+    return await this.newsServ.getNewsTypes();
   }
 
-  @Post()
-  @HttpCode(201)
-  async create(@Body() createNews: Object) {
-    console.log(createNews);
-    this.newsServ.create((createNews as any).news);
-  }
+  // // daily/:id
+  // @Get('test')
+  // findAll(@Query() query, @Param() params): Object[] {
+  //   console.log(query, params);
+  //   return this.newsServ.findAll();
+  // }
+
+  // @Post('test')
+  // @HttpCode(201)
+  // async create(@Body() createNews: Object) {
+  //   console.log(createNews);
+  //   this.newsServ.create((createNews as any).news);
+  // }
 }
