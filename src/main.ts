@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import cors from 'cors';
@@ -8,7 +9,18 @@ async function bootstrap() {
     // origin: ['https://bylh.top'],
     credentials: true // 设置允许跨域访问默认是拒绝接收浏览器发送的cookie，这里设置允许
   };
-  const app = await NestFactory.create(AppModule);
+  let httpsOptions;
+  try {
+     httpsOptions = {
+      key: fs.readFileSync('/root/.acme.sh/*.bylh.top/*.bylh.top.key', 'utf8'),
+      cert: fs.readFileSync('/root/.acme.sh/*.bylh.top/fullchain.cer', 'utf8')
+    };
+  } catch {
+    httpsOptions = {};
+  }
+  const app = await NestFactory.create(AppModule, {
+    httpsOptions
+  });
   await app.use(cors(corsOptions));
   await app.listen(3001);
 }
