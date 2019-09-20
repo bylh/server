@@ -14,6 +14,7 @@ export class NewsController {
   }
   @Get('types')
   async getNewsTypes() {
+    console.log('获取类型');
     return await this.newsServ.getNewsTypes();
   }
 
