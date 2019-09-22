@@ -27,6 +27,7 @@ export class NewsService {
   }
   async getNewsTypes() {
     try {
+      console.log('开始获取类型，调用外部api');
       let res = await axios.request({
         url: 'https://www.printf520.com:8080/GetType',
         method: 'get',
