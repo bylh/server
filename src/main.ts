@@ -16,7 +16,7 @@ async function bootstrap() {
       cert: fs.readFileSync('/root/.acme.sh/*.bylh.top/fullchain.cer', 'utf8')
     };
   } catch {
-    httpsOptions = {};
+    httpsOptions = null;
   }
   const app = await NestFactory.create(AppModule, {
     httpsOptions
