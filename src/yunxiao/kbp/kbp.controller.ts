@@ -27,4 +27,24 @@ export class KbpController {
       data
     })
   }
+  @Get('v2/modules')
+  async getKnowledgeModules(@Query() query, @Param() params, @Res() res) {
+    console.log('获取当前学段学科下知识点模块目录');
+    let data =  await this.kbpServ.getKnowledgeModules();
+    res.status(200).json({
+      code: 0,
+      msg: ok,
+      data
+    })
+  }
+  @Get('v2/knowledge_categoty')
+  async getKnowledgCategory(@Query() query, @Param() params, @Res() res) {
+    console.log('获取当前学段学科下知识点模块目录', query, params);
+    let data =  await this.kbpServ.getKnowledgeCategory();
+    res.status(200).json({
+      code: 0,
+      msg: ok,
+      data
+    })
+  }
 }
