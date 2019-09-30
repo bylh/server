@@ -37,10 +37,10 @@ export class KbpController {
       data
     })
   }
-  @Get('v2/knowledge_categoty')
+  @Get('v2/knowledge_categorys/:id')
   async getKnowledgCategory(@Query() query, @Param() params, @Res() res) {
     console.log('获取当前学段学科下知识点模块目录', query, params);
-    let data =  await this.kbpServ.getKnowledgeCategory();
+    let data =  await this.kbpServ.getKnowledgeCategory(Number(params.id));
     res.status(200).json({
       code: 0,
       msg: ok,
