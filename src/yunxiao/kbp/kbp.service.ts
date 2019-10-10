@@ -38,7 +38,6 @@ export class KbpService {
     let diffData = DeepDiff(orgData, newData);
     console.log(diffData);
     return diffData;
-    return {};
   }
 }
 
