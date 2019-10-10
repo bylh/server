@@ -47,4 +47,13 @@ export class KbpController {
       data
     })
   }
+  @Get('diff')
+  async getDiffData(@Query() query, @Param() params, @Res() res) {
+    let data =  await this.kbpServ.getDiffData({}, {});
+    res.status(200).json({
+      code: 0,
+      msg: ok,
+      data
+    })
+  }
 }

@@ -1,0 +1,135 @@
+{
+  "elite": 1,
+  "description": "<span style=\"position: static;\">已知集合</span>${A= \\{x | 24\\leq 20x\\leq 25\\}}$，${B= \\{x | (x- 2a)(x- a^{2}- 1)\\leq 0\\}(a\\in\\textbf R)}$<br>",
+  "type": "解答题",
+  "comment": "",
+  "difficulty": 5,
+  "period": "高中",
+  "subject": "数学",
+  "ctime": "2019-07-15T07:41:58.685Z",
+  "from": "mkp",
+  "year": 2019,
+  "refer_exampapers": [],
+  "refer_times": 1,
+  "knowledges": [
+    {
+      "id": 2109210623,
+      "name": "集合关系中的参数取值问题",
+      "score": 0.09,
+      "chance": 0.0178,
+      "videos": []
+    },
+    {
+      "id": 2146500607,
+      "name": "交、并、补集的混合运算",
+      "score": 0.9,
+      "chance": 0.1775,
+      "videos": []
+    },
+    {
+      "id": 2147155967,
+      "name": "集合的表示法",
+      "score": 0.07,
+      "chance": 0.0059,
+      "videos": [
+        {
+          "from": "suoluo",
+          "id": 1904934911,
+          "name": "特定集合的表示"
+        },
+        {
+          "from": "suoluo",
+          "id": 1904476159,
+          "name": "集合的表示方法"
+        }
+      ]
+    },
+    {
+      "id": 2147418111,
+      "name": "集合的含义与表示",
+      "score": 0.03,
+      "chance": 0.0058,
+      "videos": [
+        {
+          "id": 1904541695,
+          "name": "集合的概念"
+        },
+        {
+          "id": 1904934911,
+          "name": "特定集合的表示"
+        },
+        {
+          "id": 1904476159,
+          "name": "集合的表示方法"
+        }
+      ]
+    }
+  ],
+  "blocks": {
+    "stems": [
+      {
+        "stem": "<span style=\"position: static;\">${(1)}$求集合${A,B}$；</span>"
+      },
+      {
+        "stem": "${(2)}$若${(A\\cup B)\\subseteq B}$<span style=\"position: static;\">，求实数${a}$的取值范围.</span>"
+      }
+    ],
+    "types": [
+      "解答题",
+      "解答题"
+    ],
+    "explanations": [
+      "",
+      ""
+    ],
+    "solutions": [
+      "<p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">解：${(1)}$由题意有${A=\\{x | \\dfrac{6}{5} \\leq x \\leq \\dfrac{5}{4}\\}}$.</span></p><p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">由${a^{2}+1-2 a=(a-1)^{2} \\geq 0}$，故有${a^{2}+1 \\geq2 a}$，</span></p><p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">则${B=\\left\\{x | 2 a \\leq x \\leq a^{2}+1\\right\\}}$.</span></p>",
+      "${(2)}$<span style=\"position: static;\">由</span>${(A \\cup B) \\subseteq B}$<span style=\"position: static;\">有</span>${A \\subseteq B}$<span style=\"position: static;\">，有</span>${{{\\left\\{\\begin{array}{l}{a^{2}+1 \\geq \\dfrac{5}{4}} \\\\ {2 a \\leq \\dfrac{6}{5}}，\\end{array}\\right.}}}$<span style=\"position: static;\">，</span><br><span style=\"position: static;\">解得</span>${a \\leq-\\dfrac{1}{2}}$<span style=\"position: static;\">或</span>${\\dfrac{1}{2} \\leq a \\leq \\dfrac{3}{5}}$<span style=\"position: static;\">.</span>"
+    ],
+    "answers": [
+      "<p style=\"position: static;\"><span style=\"position: static;\">解：${(1)}$由题意有${A=\\{x | \\dfrac{6}{5} \\leq x \\leq \\dfrac{5}{4}\\}}$.</span></p><p style=\"position: static;\"><span style=\"position: static;\">由${a^{2}+1-2 a=(a-1)^{2} \\geq 0}$，故有${a^{2}+1 \\geq2 a}$，</span></p><p style=\"position: static;\"><span style=\"position: static;\">则${B=\\left\\{x | 2 a \\leq x \\leq a^{2}+1\\right\\}}$.</span></p>",
+      "${(2)}$由${(A \\cup B) \\subseteq B}$有${A \\subseteq B}$，有${{{\\left\\{\\begin{array}{l}{a^{2}+1 \\geq \\dfrac{5}{4}} \\\\ {2 a \\leq \\dfrac{6}{5}}，\\end{array}\\right.}}}$，<br>解得${a \\leq-\\dfrac{1}{2}}$或${\\dfrac{1}{2} \\leq a \\leq \\dfrac{3}{5}}$."
+    ],
+    "knowledges": [
+      [
+        {
+          "id": 2147155967,
+          "name": "集合的表示法",
+          "score": 0.07,
+          "chance": 0.0059
+        },
+        {
+          "id": 2147418111,
+          "name": "集合的含义",
+          "score": 0.03,
+          "chance": 0.0058
+        },
+        {
+          "id": 2109210623,
+          "name": "集合关系中的参数取值问题",
+          "score": 0.09,
+          "chance": 0.0178
+        }
+      ],
+      [
+        {
+          "id": 2146500607,
+          "name": "交、并、补集的混合运算",
+          "score": 0.9,
+          "chance": 0.1775
+        }
+      ]
+    ],
+    "core_knowledges": [
+      [],
+      []
+    ]
+  },
+  "core_knowledges": [],
+  "reco_questions": [
+    1558440447,
+    3672959231,
+    3173016772
+  ],
+  "id": 1708745412
+}

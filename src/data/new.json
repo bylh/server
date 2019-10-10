@@ -1,0 +1,141 @@
+{
+  "elite": 1,
+  "description": "<span style=\"position: static;\">已知集合</span>${A= \\{x | 24\\leq 20x\\leq 25\\}}$，${B= \\{x | (x- 2a)(x- a^{2}- 1)\\leq 0\\}(a\\in\\textbf R)}$测试",
+  "type": "解答题",
+  "comment": "",
+  "difficulty": 5,
+  "period": "高中",
+  "subject": "数学",
+  "ctime": "2019-10-10T08:26:42.728Z",
+  "from": "mkp",
+  "year": 2019,
+  "knowledges": [
+    {
+      "id": 2147155967,
+      "name": "集合的表示法",
+      "score": 0.07,
+      "chance": 0.0059
+    },
+    {
+      "id": 2147418111,
+      "name": "集合的含义",
+      "score": 0.03,
+      "chance": 0.0058
+    },
+    {
+      "id": 2105147391,
+      "name": "对称图形",
+      "score": 0,
+      "chance": 0
+    },
+    {
+      "id": 2122448895,
+      "name": "合情推理的作用",
+      "score": 0,
+      "chance": 0
+    },
+    {
+      "id": 2122514431,
+      "name": "归纳推理",
+      "score": 0.64,
+      "chance": 0.1006
+    }
+  ],
+  "blocks": {
+    "types": [
+      "解答题",
+      "解答题"
+    ],
+    "stems": [
+      {
+        "stem": "<span style=\"position: static;\">${(1)}$求集合${A,B}$；测试题干</span>"
+      },
+      {
+        "stem": "${(2)}$若${(A\\cup B)\\subseteq B}$<span style=\"position: static;\">，求实数${a}$的取值范围.测试2小题题干</span>"
+      }
+    ],
+    "answers": [
+      "<p style=\"position: static;\"><span style=\"position: static;\">解：${(1)}$由题意有${A=\\{x | \\dfrac{6}{5} \\leq x \\leq \\dfrac{5}{4}\\}}$.</span></p><p style=\"position: static;\"><span style=\"position: static;\">由${a^{2}+1-2 a=(a-1)^{2} \\geq 0}$，故有${a^{2}+1 \\geq2 a}$，</span></p><p style=\"position: static;\"><span style=\"position: static;\">则${B=\\left\\{x | 2 a \\leq x \\leq a^{2}+1\\right\\}}$.</span></p>",
+      "${(2)}$由${(A \\cup B) \\subseteq B}$有${A \\subseteq B}$，有${{{\\left\\{\\begin{array}{l}{a^{2}+1 \\geq \\dfrac{5}{4}} \\\\ {2 a \\leq \\dfrac{6}{5}}，\\end{array}\\right.}}}$，<br>解得${a \\leq-\\dfrac{1}{2}}$或${\\dfrac{1}{2} \\leq a \\leq \\dfrac{3}{5}}$."
+    ],
+    "solutions": [
+      "<p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">解：${(1)}$由题意有${A=\\{x | \\dfrac{6}{5} \\leq x \\leq \\dfrac{5}{4}\\}}$.测试</span></p><p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">由${a^{2}+1-2 a=(a-1)^{2} \\geq 0}$，故有${a^{2}+1 \\geq2 a}$，</span></p><p style=\"white-space: normal; position: static;\"><span style=\"position: static;\">则${B=\\left\\{x | 2 a \\leq x \\leq a^{2}+1\\right\\}}$.</span></p>",
+      "${(2)}$<span style=\"position: static;\">由</span>${(A \\cup B) \\subseteq B}$<span style=\"position: static;\">有</span>${A \\subseteq B}$<span style=\"position: static;\">，有</span>${{{\\left\\{\\begin{array}{l}{a^{2}+1 \\geq \\dfrac{5}{4}} \\\\ {2 a \\leq \\dfrac{6}{5}}，\\end{array}\\right.}}}$<span style=\"position: static;\">，</span><br><span style=\"position: static;\">解得</span>${a \\leq-\\dfrac{1}{2}}$<span style=\"position: static;\">或</span>${\\dfrac{1}{2} \\leq a \\leq \\dfrac{3}{5}}$<span style=\"position: static;\">.</span>"
+    ],
+    "explanations": [
+      "",
+      ""
+    ],
+    "knowledges": [
+      [
+        {
+          "id": 2147155967,
+          "name": "集合的表示法",
+          "score": 0.07,
+          "chance": 0.0059
+        },
+        {
+          "id": 2147418111,
+          "name": "集合的含义",
+          "score": 0.03,
+          "chance": 0.0058
+        },
+        {
+          "id": 2105147391,
+          "name": "对称图形",
+          "score": 0,
+          "chance": 0
+        }
+      ],
+      [
+        {
+          "id": 2122448895,
+          "name": "合情推理的作用",
+          "score": 0,
+          "chance": 0
+        },
+        {
+          "id": 2122514431,
+          "name": "归纳推理",
+          "score": 0.64,
+          "chance": 0.1006
+        }
+      ]
+    ],
+    "core_knowledges": [
+      [],
+      []
+    ]
+  },
+  "core_knowledges": [],
+  "reco_questions": [
+    1558440447,
+    3672959231,
+    3173016772
+  ],
+  "id": "5d9eeb4231742392a77a0545",
+  "utime": "2019-10-10T08:40:41.995Z",
+  "stime": "2019-10-10T08:29:05.758Z",
+  "rtime": "2019-10-10T08:40:41.995Z",
+  "editor_name": "李欢",
+  "editor_comment": "",
+  "edit_type": "修改",
+  "quit_id": "",
+  "quit_name": "",
+  "assigner_id": "",
+  "assigner_name": "",
+  "resource_id": 1708745412,
+  "type_tags": [],
+  "tags": {
+    "count_sub_ques": 2,
+    "count_options": [
+      0,
+      0
+    ],
+    "grades": []
+  },
+  "status": "未通过",
+  "reviewer_name": "李欢",
+  "reviewer_comment": "测试不通过",
+  "reviewer_imgs": []
+}

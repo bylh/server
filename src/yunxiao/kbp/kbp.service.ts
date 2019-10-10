@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { nodeInternals } from 'stack-utils';
+import fs from 'fs';
+import { DeepDiff } from 'deep-diff'
 
 @Injectable()
 export class KbpService {
@@ -28,6 +30,15 @@ export class KbpService {
     let know = findKnowById(this.modelData, know_id);
     console.log('获取knowledge', know);
     return know;
+  }
+  async getDiffData(orgData, newData) {
+    orgData = JSON.parse(fs.readFileSync('src/data/org.json', {encoding: 'utf8'}));
+    newData = JSON.parse(fs.readFileSync('src/data/new.json', {encoding: 'utf8'}));
+
+    let diffData = DeepDiff(orgData, newData);
+    console.log(diffData);
+    return diffData;
+    return {};
   }
 }
 
