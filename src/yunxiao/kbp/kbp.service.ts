@@ -15,7 +15,10 @@ export class KbpService {
       }]
     }]
   }
-  async getKnowledgeModules() {
+  async getKnowledgeModules(transform = true) {
+    if (!transform) {
+      return this.modelData;
+    }
     let data = deepClone(this.modelData);
     getModuleTree(data);
     return data;
