@@ -37,6 +37,10 @@ export class KbpService {
 
     let diffData = diff(orgData, newData);
     console.log(diffData);
+    return {
+      orgQue: orgData,
+      newQue: newData
+    }
     return diffData;
   }
 }
