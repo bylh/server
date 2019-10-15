@@ -11,7 +11,10 @@ export class PhotosService {
     secret: Config.Unsplash.secret
   });
   async getPhotos(query = {query: ''}) {
-    query.query = encodeURI(query.query);
+    if(query.query) {
+      
+    }
+    query.query = query.query ? encodeURI(query.query) : null;
     let data = await this.unsplash.photos.getRandomPhoto({
       ...query
     });
