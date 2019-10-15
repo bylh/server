@@ -10,6 +10,6 @@ export class PhotosController {
   @Get()
   async getPhotos(@Query() query, @Param() params) {
     console.log(query, params);
-    return await this.photosServ.getPhotos();
+    return await this.photosServ.getPhotos(query);
   }
 }

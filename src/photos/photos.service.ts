@@ -10,9 +10,9 @@ export class PhotosService {
     applicationId: Config.Unsplash.applicationId,
     secret: Config.Unsplash.secret
   });
-  async getPhotos() {
+  async getPhotos(query = {}) {
     let data = await this.unsplash.photos.getRandomPhoto({
-      count: 10
+      ...query
     });
     let jsonData = await toJson(data);
     return jsonData;
