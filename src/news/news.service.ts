@@ -15,7 +15,7 @@ export class NewsService {
   async getNews(id: String) {
     try {
       let res = await axios.request({
-        url: 'https://www.printf520.com:8080/GetTypeInfo',
+        url: 'https://tophub.fun:8080/GetTypeInfo',
         method: 'get',
         params: {id},
       })
@@ -29,7 +29,7 @@ export class NewsService {
     try {
       console.log('开始获取类型，调用外部api');
       let res = await axios.request({
-        url: 'https://www.printf520.com:8080/GetType',
+        url: 'https://tophub.fun:8080/GetType',
         method: 'get',
         params: {},
       })
