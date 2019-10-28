@@ -1,13 +1,13 @@
 export function deepClone(data) {
     if (data instanceof Array) {
-        let newData = new Array;
+        let newData = [];
         for (let i = 0, l = data.length; i < l; i++) {
             newData[i] = deepClone(data[i]);
         }
         return newData;
     }
     else if (data instanceof Object) {
-        let newData = new Object;
+        let newData = {};
         for (let i in data) {
             newData[i] = deepClone(data[i]);
         }

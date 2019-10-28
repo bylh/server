@@ -10,7 +10,6 @@ export class KbApiController {
     }
     @Get()
     async testServ(@Query() query, @Param() params) {
-        console.log('kb_api');
         // 注意：函数参数中引入@Res就不能直接返回了，需要用res返回结果
         return {
             code: 0,
