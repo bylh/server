@@ -19,8 +19,8 @@ export class KbApiController {
         };
     }
     @Get('v1/element_category')
-    async getElementCategory(@Res() res) {
-        const data =  await this.kbApiServ.getElementCategory();
+    async getElementCategory(@Query() query, @Res() res) {
+        const data =  await this.kbApiServ.getElementCategory(query.limit, query.offset);
         res.status(200).json({
             code: 0,
             msg: 'ok',

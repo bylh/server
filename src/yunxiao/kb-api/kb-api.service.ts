@@ -3,8 +3,9 @@ import {deepClone} from '../../common/utils';
 
 @Injectable()
 export class KbApiService {
-    async getElementCategory() {
+    async getElementCategory(limit = 10, offset = 0) {
         const cloneData = deepClone(categoryData);
+        cloneData.list = (cloneData.list as any).slice(offset, offset + limit);
         (cloneData.list as any).forEach(item => {
             delete item.children;
         });
@@ -21,80 +22,80 @@ const categoryData = {
         id: '21412412',
         name: '类别1',
         children: [{
-           id: '32141412',
+           id: '32145435341412',
             name: '要素1',
         }, {
-            id: '32141412',
+            id: '3216346441412',
             name: '要素2',
         }],
     }, {
         id: '2353253',
         name: '类别2',
         children: [{
-            id: '32141412',
+            id: '321443241241412',
             name: '要素3',
         }, {
-            id: '32141412',
+            id: '3214e1412',
             name: '要素4',
         }],
     }, {
         id: '523532',
         name: '类别3',
         children: [{
-            id: '32141412',
+            id: '3214254354361412',
             name: '要素5',
         }, {
-            id: '32141412',
+            id: '32142131412',
             name: '要素6',
         }],
     }, {
         id: '858665',
         name: '类别4',
         children: [{
-            id: '32141412',
+            id: '3214121321412',
             name: '要素7',
         }, {
-            id: '32141412',
+            id: '32143461412',
             name: '要素8',
         }],
     }, {
         id: '31232',
         name: '类别5',
         children: [{
-            id: '32141412',
+            id: '32141321312412',
             name: '要素9',
         }, {
-            id: '32141412',
+            id: '32143123121412',
             name: '要素10',
         }],
     }, {
         id: '32432525',
         name: '类别6',
         children: [{
-            id: '32141412',
+            id: '321432131412',
             name: '要素11',
         }, {
-            id: '32141412',
+            id: '32143121412',
             name: '要素12',
         }],
     }, {
         id: '45489543',
         name: '类别7',
         children: [{
-            id: '32141412',
+            id: '32145435341412',
             name: '要素13',
         }, {
-            id: '32141412',
+            id: '321432311412',
             name: '要素14',
         }],
     }, {
         id: '63243423',
         name: '类别8',
         children: [{
-            id: '32141412',
+            id: '321321341412',
             name: '要素15',
         }, {
-            id: '32141412',
+            id: '32132132145431412',
             name: '要素16',
         }],
     }, {
@@ -119,10 +120,10 @@ const categoryData = {
         id: '453546165',
         name: '类别15',
         children: [{
-            id: '32141412',
+            id: '321432131412',
             name: '要素17',
         }, {
-            id: '32141412',
+            id: '3214232311412',
             name: '要素18',
         }],
     }],
