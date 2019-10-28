@@ -1,10 +1,14 @@
 import { Injectable } from '@nestjs/common';
+import {deepClone} from '../../common/utils';
 
 @Injectable()
 export class KbApiService {
     async getElementCategory() {
-
-        return categoryData;
+        const cloneData = deepClone(categoryData);
+        (cloneData.list as any).forEach(item => {
+            delete item.children;
+        });
+        return cloneData;
     }
     async getElementCategoryDetail(id: number | string) {
         return (categoryData.list as any).find(item => item.id === id);
