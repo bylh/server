@@ -1,6 +1,5 @@
 import { KbpService } from './kbp.service';
 import { Controller, Get, Query, Param, Res } from '@nestjs/common';
-import { ok } from 'assert';
 
 @Controller('kbp')
 export class KbpController {
@@ -8,7 +7,7 @@ export class KbpController {
   constructor(kbpServ: KbpService) {
     this.kbpServ = kbpServ;
   }
-  
+
   @Get()
   async testServ(@Query() query, @Param() params) {
     return {
@@ -23,7 +22,7 @@ export class KbpController {
     let data =  await this.kbpServ.getChapters();
     res.status(200).json({
       code: 0,
-      msg: ok,
+      msg: 'ok',
       data
     })
   }
@@ -33,7 +32,7 @@ export class KbpController {
     let data =  await this.kbpServ.getKnowledgeModules(query.transform);
     res.status(200).json({
       code: 0,
-      msg: ok,
+      msg: 'ok',
       data
     })
   }
@@ -43,7 +42,7 @@ export class KbpController {
     let data =  await this.kbpServ.getKnowledgeCategory(Number(params.id));
     res.status(200).json({
       code: 0,
-      msg: ok,
+      msg: 'ok',
       data
     })
   }
@@ -52,7 +51,7 @@ export class KbpController {
     let data =  await this.kbpServ.getDiffData({}, {});
     res.status(200).json({
       code: 0,
-      msg: ok,
+      msg: 'ok',
       data
     })
   }

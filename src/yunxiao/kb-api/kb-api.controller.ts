@@ -1,4 +1,40 @@
-import { Controller } from '@nestjs/common';
+import {Controller, Get, Param, Query, Res} from '@nestjs/common';
+import {KbApiService} from './kb-api.service';
 
-@Controller('kb-api')
-export class KbApiController {}
+@Controller('kb_api')
+export class KbApiController {
+    private kbApiServ: KbApiService;
+
+    constructor(kbApiServ: KbApiService) {
+        this.kbApiServ = kbApiServ;
+    }
+    @Get()
+    async testServ(@Query() query, @Param() params) {
+        console.log('kb_api');
+        // 注意：函数参数中引入@Res就不能直接返回了，需要用res返回结果
+        return {
+            code: 0,
+            msg: 'ok',
+            data: 'kbApiService is working',
+        };
+    }
+    @Get('v1/element_category')
+    async getElementCategory(@Res() res) {
+        const data =  await this.kbApiServ.getElementCategory();
+        res.status(200).json({
+            code: 0,
+            msg: 'ok',
+            data,
+        });
+    }
+
+    @Get('v1/element_category/:id')
+    async getElementCategoryDetail(@Param() params, @Res() res) {
+        const data =  await this.kbApiServ.getElementCategoryDetail(params.id);
+        res.status(200).json({
+            code: 0,
+            msg: 'ok',
+            data,
+        });
+    }
+}
