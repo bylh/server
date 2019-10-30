@@ -14,6 +14,13 @@ export class KbApiService {
     async getElementCategoryDetail(id: number | string) {
         return (categoryData.list as any).find(item => item.id === id);
     }
+
+    async getKnowMethodGroupList(limit = 10, offset = 0) {
+        const cloneData = deepClone(knowMethodGroupList);
+        cloneData.list = (cloneData.list as any).slice(offset, offset + limit);
+        cloneData.list.forEach(item => item.ctime = new Date());
+        return cloneData;
+    }
 }
 
 const categoryData = {
@@ -126,5 +133,136 @@ const categoryData = {
             id: '3214232311412',
             name: '要素18',
         }],
+    }],
+};
+
+const knowMethodGroupList = {
+    total_num: 11,
+    list: [{
+        id: 123213123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 1241321324124,
+        }, {
+            name: '函数发打发打发很大方哈哈就发士大夫好尬发挥更大双方各哈撒给',
+            id: 12413211324124,
+        }, {
+            name: '函数',
+            id: 124132132131224124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 123424312123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 1241141412424124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 123321313123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 124545465124124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 34243121233123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 1241643643624124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 1233231123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 12412432432424124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 123131231223,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 124123243244124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 1231654747523,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 124124324324324124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 1234324123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 124132124124545434,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 123432432423123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 1243213123124124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 123143243242323,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 124312321124124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 1231324324223,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 12241321324124,
+        }],
+        ctime: new Date(),
+    }, {
+        id: 1234324234123,                         // 组id
+        period: '高中',           // 学段
+        subject: '数学',          // 学科
+        name: '组合1',            // 组名
+        children: [{
+            name: '函数',
+            id: 1244324124124,
+        }],
+        ctime: new Date(),
     }],
 };

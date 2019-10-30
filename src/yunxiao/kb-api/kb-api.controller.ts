@@ -1,4 +1,4 @@
-import {Controller, Get, Param, Query, Res} from '@nestjs/common';
+import {Controller, Get, Logger, Param, Query, Res} from '@nestjs/common';
 import {KbApiService} from './kb-api.service';
 
 @Controller('kb_api')
@@ -29,11 +29,26 @@ export class KbApiController {
 
     @Get('v1/element_category/:id')
     async getElementCategoryDetail(@Param() params, @Res() res) {
+        Logger.debug('getElementCategoryDetail: start');
         const data =  await this.kbApiServ.getElementCategoryDetail(params.id);
         res.status(200).json({
             code: 0,
             msg: 'ok',
             data,
         });
+        Logger.debug('getElementCategoryDetail: end');
+    }
+
+    // 细分关系表
+    @Get('v2/know_method_groups/list')
+    async getKnowMethodGroupList(@Query() query, @Res() res) {
+        Logger.debug('getKnowMethodGroupList(): start');
+        const data = await this.kbApiServ.getKnowMethodGroupList(query.limit, query.offset);
+        res.status(200).json({
+           code: 0,
+           msg: 'ok',
+           data,
+        });
+        Logger.debug('getKnowMethodGroupList(): end');
     }
 }

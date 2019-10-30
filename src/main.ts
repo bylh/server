@@ -2,6 +2,7 @@ import fs from 'fs';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import cors from 'cors';
+import {MyLogger} from './logger/logger';
 async function bootstrap() {
   const corsOptions = {
     /* 注意：https下 不能同时设置origin为*和credentials: true，这样不安全，http下可以设置，但不推荐 */
@@ -19,7 +20,12 @@ async function bootstrap() {
     httpsOptions = null;
   }
   const app = await NestFactory.create(AppModule, {
-    httpsOptions
+    httpsOptions,
+    /**
+     * 继承Logger, 在这声明了，其他module导入的时候
+     * 直接使用 import {Logger} from '@nestjs/common即可;
+     */
+    logger: new MyLogger(),
   });
   await app.use(cors(corsOptions));
   await app.listen(3001);
