@@ -18,7 +18,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "pull-common": "git subtree pull --prefix=src/common  https://github.com/bylh/common.git master",
+    "push-common": "git subtree push --prefix=src/common  https://github.com/bylh/common.git master"
   },
   "dependencies": {
     "@nestjs/common": "^6.0.0",
@@ -28,6 +30,7 @@
     "@types/unsplash-js": "^5.0.0",
     "cors": "^2.8.5",
     "deep-diff": "^1.0.2",
+    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "pm2": "^3.5.1",
     "reflect-metadata": "^0.1.12",
