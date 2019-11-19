@@ -18,8 +18,8 @@ export class NewsService {
         url: 'https://tophub.fun:8080/GetTypeInfo',
         method: 'get',
         params: {id},
-      })
-      this.news = res.data.Data;
+      });
+      this.news = Array.isArray(res.data.Data) ?  res.data.Data : [];
       return this.news;
     } catch (err) {
       throw err;
