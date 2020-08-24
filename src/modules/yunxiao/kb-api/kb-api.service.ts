@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import {deepClone} from '../../common/utils';
+import {deepClone} from '../../../common/utils';
 
 @Injectable()
 export class KbApiService {
