@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import fetch from 'node-fetch';
 import Unsplash, { toJson } from 'unsplash-js';
-import Config from '../../extra/index'
+import Config from '../../../extra/index'
 (global as any).fetch = fetch;
 @Injectable()
 export class PhotosService {
