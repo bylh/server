@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { nodeInternals } from 'stack-utils';
 import fs from 'fs';
 import { diff } from 'deep-diff';
-import {deepClone} from '../../../common/utils';
+import {deepClone} from '../../../../common/utils';
 
 @Injectable()
 export class KbpService {
