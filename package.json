@@ -30,6 +30,7 @@
     "@types/unsplash-js": "^5.0.0",
     "cors": "^2.8.5",
     "deep-diff": "^1.0.2",
+    "http-proxy-middleware": "^1.0.5",
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "pm2": "^3.5.1",

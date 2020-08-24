@@ -3,6 +3,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import cors from 'cors';
 import {MyLogger} from './logger/logger';
+import {createProxyMiddleware} from 'http-proxy-middleware';
+import url from 'url';
 async function bootstrap() {
   const corsOptions = {
     /* 注意：https下 不能同时设置origin为*和credentials: true，这样不安全，http下可以设置，但不推荐 */
@@ -26,8 +28,17 @@ async function bootstrap() {
      * 直接使用 import {Logger} from '@nestjs/common即可;
      */
     logger: new MyLogger(),
+    bodyParser: false,
   });
   await app.use(cors(corsOptions));
+  app.use('/go_api', createProxyMiddleware({
+    target: url.format({
+        protocol: 'https',
+        hostname: 'bylh.top',
+        port: 8000
+    }),
+    changeOrigin: true,
+}));
   await app.listen(3001);
 }
 bootstrap();

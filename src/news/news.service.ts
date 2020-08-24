@@ -15,11 +15,11 @@ export class NewsService {
   async getNews(id: string) {
     try {
       const res = await axios.request({
-        url: 'https://tophub.fun:8080/GetTypeInfo',
+        url: 'https://www.tophub.fun:8888/GetAllInfoGzip',
         method: 'get',
         params: {id},
       });
-      this.news = Array.isArray(res.data.Data) ?  res.data.Data : [];
+      this.news = res.data;
       return this.news;
     } catch (err) {
       throw err;
@@ -28,14 +28,15 @@ export class NewsService {
   async getNewsTypes() {
     try {
       const res = await axios.request({
-        url: 'https://tophub.fun:8080/GetType',
+        url: 'https://www.tophub.fun:8888/GetAllType',
         method: 'get',
         params: {},
       });
-      this.newsTypes = res.data.Data;
-      const filters = ['知乎', '知乎日报', 'V2EX', 'Segmentfault', 'GitHub', 'ReadHub', '虎扑', '豆瓣'].reverse();
-      return this.newsTypes.sort((a, b) => filters.indexOf((b as any).title) -
-      filters.indexOf((a as any).title));
+      this.newsTypes = res.data;
+    //   const filters = ['知乎', '知乎日报', 'V2EX', 'Segmentfault', 'GitHub', 'ReadHub', '虎扑', '豆瓣'].reverse();
+    //   return this.newsTypes.sort((a, b) => filters.indexOf((b as any).title) -
+    //   filters.indexOf((a as any).title));
+    return this.newsTypes;
     } catch (err) {
       throw err;
     }
