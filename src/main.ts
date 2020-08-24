@@ -28,7 +28,7 @@ async function bootstrap() {
      * 直接使用 import {Logger} from '@nestjs/common即可;
      */
     logger: new MyLogger(),
-    bodyParser: false,
+    // bodyParser: false,
   });
   await app.use(cors(corsOptions));
   app.use('/go_api', createProxyMiddleware({
