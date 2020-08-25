@@ -1,3 +1,4 @@
+import { ConfigService } from '@nestjs/config';
 import fs from 'fs';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -31,11 +32,12 @@ async function bootstrap() {
     // bodyParser: false,
   });
   await app.use(cors(corsOptions));
+  const configService = app.get(ConfigService);
   app.use('/go_api', createProxyMiddleware({
     target: url.format({
-        protocol: 'https',
-        hostname: 'bylh.top',
-        port: 8000
+        protocol: configService.get('go_api_protocol'),
+        hostname: configService.get('go_api_host'),
+        port: configService.get('go_api_port')
     }),
     pathRewrite: {
         '^/go_api' : '/'
