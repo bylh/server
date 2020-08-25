@@ -37,6 +37,9 @@ async function bootstrap() {
         hostname: 'bylh.top',
         port: 8000
     }),
+    pathRewrite: {
+        '^/go_api' : '/'
+    },
     changeOrigin: true,
 }));
   await app.listen(3001);
