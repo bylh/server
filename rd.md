@@ -8,6 +8,13 @@
 - 指定module下生成controller
   nest g co modules/download
 
+## 升级
+
+- npm install -g @nestjs/cli
+- nest update -f -t latest
+
+## 目录结构
+
 nodejs
 ├── package.json
 ├── README.md

@@ -27,10 +27,10 @@
     "push-common": "git subtree push --prefix=common  https://github.com/bylh/common.git master"
   },
   "dependencies": {
-    "@nestjs/common": "^6.0.0",
+    "@nestjs/common": "^7.4.2",
     "@nestjs/config": "^0.5.0",
-    "@nestjs/core": "^6.0.0",
-    "@nestjs/platform-express": "^6.0.0",
+    "@nestjs/core": "^7.4.2",
+    "@nestjs/platform-express": "^7.4.2",
     "@types/cors": "^2.8.6",
     "@types/fs-extra": "^9.0.1",
     "@types/unsplash-js": "^5.0.0",
