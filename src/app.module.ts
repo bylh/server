@@ -1,3 +1,5 @@
+import { ToolsController } from './modules/tools/tools.controller';
+import { ToolsService } from './modules/tools/tools.service';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
@@ -17,7 +19,7 @@ import configuration from './config/configuration';
       envFilePath: ['.env'],
   }), 
   PhotosModule, DownloadModule],
-  controllers: [AppController, NewsController, DownloadController],
-  providers: [AppService, NewsService, DownloadService],
+  controllers: [AppController, NewsController, DownloadController, ToolsController],
+  providers: [AppService, NewsService, DownloadService, ToolsService],
 })
 export class AppModule {}
