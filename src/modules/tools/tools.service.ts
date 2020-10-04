@@ -1,6 +1,7 @@
 import { ConfigService } from '@nestjs/config';
-import { Injectable } from '@nestjs/common';
+import { Injectable, UploadedFile } from '@nestjs/common';
 import mjAPI from 'mathjax-node';
+import fs from 'fs-extra';
 @Injectable()
 export class ToolsService {
     mjInstance: any;
@@ -24,5 +25,24 @@ export class ToolsService {
         });
         console.timeEnd('latex2mathml');
         return data.mml;
+    }
+    async handleUploadFile(@UploadedFile() file) {
+        const filesPath = this.configService.get('files_path');
+        const host = this.configService.get('host');
+        const protocol = this.configService.get('protocol');
+        const port = this.configService.get('port');
+        fs.stat('')
+        const writeImage = fs.createWriteStream('./' + filesPath + '/' + file.originalname);
+        writeImage.write(file.buffer)
+        return {
+            file: protocol + '://' + host + ':' + port + '/tools/files/' + file.originalname
+        };
+    }
+
+    async getFile(id) {
+        return {
+            id: id,
+            root: this.configService.get('files_path')
+        };
     }
 }

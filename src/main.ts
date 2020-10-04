@@ -5,6 +5,9 @@ import { AppModule } from './app.module';
 import cors from 'cors';
 import {MyLogger} from './logger/logger';
 import {createProxyMiddleware} from 'http-proxy-middleware';
+import { NestExpressApplication } from '@nestjs/platform-express';
+// import express from 'express';
+import path from 'path';
 import url from 'url';
 async function bootstrap() {
   const corsOptions = {
@@ -22,7 +25,7 @@ async function bootstrap() {
   } catch {
     httpsOptions = null;
   }
-  const app = await NestFactory.create(AppModule, {
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     httpsOptions,
     /**
      * 继承Logger, 在这声明了，其他module导入的时候
@@ -33,6 +36,10 @@ async function bootstrap() {
   });
   await app.use(cors(corsOptions));
   const configService = app.get(ConfigService);
+  // 需要在app controller中配置sendFile方法
+  app.useStaticAssets(path.join(__dirname, '..', 'public'));
+// 直接引入express也是可以的，直接能访问
+//   app.use('/public', express.static(path.join(__dirname, '..', 'public')));
   app.use('/go_api', createProxyMiddleware({
     target: url.format({
         protocol: configService.get('go_api_protocol'),
@@ -44,6 +51,6 @@ async function bootstrap() {
     },
     changeOrigin: true,
 }));
-  await app.listen(3001);
+  await app.listen(configService.get('port'));
 }
 bootstrap();

@@ -11,6 +11,8 @@ import { DownloadModule } from './modules/download/download.module';
 import { DownloadController } from './modules/download/download.controller';
 import { DownloadService } from './modules/download/download.service';
 import configuration from './config/configuration';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -18,6 +20,12 @@ import configuration from './config/configuration';
       load: [configuration],
       envFilePath: ['.env'],
   }), 
+  ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'public'),
+    serveStaticOptions: {
+        index: false,
+    }
+  }),
   PhotosModule, DownloadModule],
   controllers: [AppController, NewsController, DownloadController, ToolsController],
   providers: [AppService, NewsService, DownloadService, ToolsService],
