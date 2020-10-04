@@ -29,9 +29,7 @@ export class ToolsService {
     async handleUploadFile(@UploadedFile() file) {
         const filesPath = this.configService.get('files_path');
         const host = this.configService.get('host');
-        const protocol = this.configService.get('protocol');
-        const port = this.configService.get('port');
-        fs.stat('')
+        const protocol = this.configService.get('protocol');        const port = this.configService.get('port');
         const writeImage = fs.createWriteStream('./' + filesPath + '/' + file.originalname);
         writeImage.write(file.buffer)
         return {
